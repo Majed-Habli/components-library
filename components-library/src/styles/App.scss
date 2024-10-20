@@ -1,0 +1,12 @@
+.main {
+    width: 100vw;
+    height: 100vh;
+}
+    
+a {
+    margin-right: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@import './components/navbars/navbars';
