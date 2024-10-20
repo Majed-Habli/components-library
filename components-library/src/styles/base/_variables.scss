@@ -1,0 +1,43 @@
+$navbar-height: 60px;
+$font-family: 'Arial, sans-serif';
+
+$color-palette: (
+  red: (
+    100: #ff6b6b,
+    200: #ff3b3b
+  ),
+  green: (
+    100: #2ecc71,
+    200: #27ae60
+  ),
+  white: (
+    100: #E0F2E9,
+    500: #ffffff
+  ),
+  black: (
+    100: #797575,
+    200: #3e3e3e,
+    300: #121212,
+    500: #000000
+  ),
+  blue: (
+    50: #E0F2E9,
+    100: #CAE9FF,
+    200: #BEE9E8,
+    300: #62B6CB,
+    400: #5FA8D3,
+    500: #5D737E,
+    600: #1B4965,
+    700: #0870FF
+  )
+);
+
+// Function to get the default color for a given color name
+@function get-default-color($color-name) {
+  @if not map-has-key($color-palette, $color-name) {
+    @warn "Color name '#{$color-name}' is not found in the color palette.";
+    @return null; // Or return a fallback color
+  }
+
+  @return map-get(map-get($color-palette, $color-name), 100);
+}

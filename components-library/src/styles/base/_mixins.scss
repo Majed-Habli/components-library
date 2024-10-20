@@ -1,0 +1,15 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin border-bottom {
+    border-bottom: 1px solid rgb(239, 230, 230);
+}
+
+@mixin mobile {
+    @media (max-width: 475px) {
+      @content;
+    }
+  }
