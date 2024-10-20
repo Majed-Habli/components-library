@@ -1,0 +1,114 @@
+@import './../../base/variables';
+@import './../../base/mixins';
+
+.navbar {
+  height: $navbar-height;
+  @include flex-center;
+  @include border-bottom;
+  padding: 0 20px;
+
+  &-brand {
+    @include flex-center;
+    
+    img {
+      height: 24px;
+    }
+
+    h4 {
+      font-family: $font-family;
+      font-size: 1.5rem;
+      text-wrap: nowrap;
+    }
+  }
+
+  // Links and button section
+  .navbar-links {
+    display: flex;
+    align-items: center;
+
+    button {
+      border: none;
+      color: #fff;
+      padding: 7px 30px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(95, 94, 94);
+      }
+    }
+  }
+
+  .rounded-icon {
+    border-radius: 50%;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    min-width: 35px;
+    margin-right: 10px;
+    align-items: center;
+  }
+
+  // Apply mobile styles using the mixin
+  @include mobile {
+    .navbar-links {
+      a {
+          display: none;
+      }
+    }
+  }
+
+}
+
+// mobile section
+.mobile-links {
+  display: none;
+}
+
+@include mobile {
+  .mobile-links {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    background-color: #121212;
+  }
+}
+
+// Generate color classes
+@each $color-name, $shades in $color-palette {
+  .bg-#{$color-name} {
+    background-color: get-default-color($color-name);
+  }
+
+  .text-#{$color-name} {
+    color: get-default-color($color-name);
+  }
+
+  .link-#{$color-name} {
+    &:hover {
+      color: get-default-color( $color-name);
+    }
+  }
+
+  // Loop for additional shades
+  @each $shade-name, $shade-value in $shades {
+    .bg-#{$color-name}-#{$shade-name} {
+      background-color: $shade-value;
+    }
+
+    .text-#{$color-name}-#{$shade-name} {
+      color: $shade-value;
+    }
+
+    .link-#{$color-name}-#{$shade-name} {
+      &:hover {
+        color: $shade-value;
+      }
+    }
+  }
+}
+
+
