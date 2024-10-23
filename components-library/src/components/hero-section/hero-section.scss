@@ -1,0 +1,57 @@
+.banner-text {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    right: 5%;
+    width: auto;
+    max-width: 500px;
+    transform: translateY(-30%);
+  
+    .banner-title {
+      color: rgb(0, 0, 0);
+      font-size: 32px;
+      font-weight: 500;
+  
+      span {
+        color: blue;
+      }
+    }
+  
+    .banner-description {
+      font-size: 24px;
+    }
+  
+    @media (max-width: 768px) {
+      /* Tablet and mobile styles */
+      top: 30%;
+      left: 5%;
+      right: 5%;
+      transform: translateY(-40%);
+  
+      .banner-title {
+        font-size: 28px;
+      }
+  
+      .banner-description {
+        font-size: 20px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      /* Mobile-specific styles */
+      top: 20%;
+      left: 5%;
+      right: 5%;
+      width: auto;
+      transform: translateY(-50%);
+  
+      .banner-title {
+        font-size: 22px;
+      }
+  
+      .banner-description {
+        font-size: 18px;
+      }
+    }
+  }
+  
