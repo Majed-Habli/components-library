@@ -34,7 +34,7 @@ $color-palette: (
     200: #D4D4D4,
     300: #B8B8B8,
     400: #9C9C9C,
-    500: #636363,
+    500: #737373,
     600: #636363,
     700: #474747,
     800: #2A2A2A,
@@ -60,5 +60,40 @@ $color-palette: (
     @return null; // Or return a fallback color
   }
 
-  @return map-get(map-get($color-palette, $color-name), 100);
+  @return map-get(map-get($color-palette, $color-name), 500);
+}
+
+// Function to get a lighter shade for a given color name and shade
+@function get-lighter-shade($color-name, $shade) {
+  // Check if the color exists in the palette
+  @if not map-has-key($color-palette, $color-name) {
+    @warn "Color name '#{$color-name}' is not found in the color palette.";
+    @return null; // Or return a fallback color
+  }
+
+  // Retrieve the shades for the specified color
+  $shades: map-get($color-palette, $color-name);
+
+  // Check if the specific shade exists
+  @if not map-has-key($shades, $shade) {
+    @warn "Shade '#{$shade}' is not found for color '#{$color-name}'.";
+    @return null; // Or return a fallback color
+  }
+
+  // Get the current shade value
+  $current-color: map-get($shades, $shade);
+
+  // Check if a lighter shade exists in the palette
+  $lighter-shade: $shade - 400;
+  @if $lighter-shade < 100 {
+    @warn "No lighter shade available for '#{$color-name}' at '#{$shade}'.";
+    @return $current-color; // Fallback to the original color
+  }
+
+  // Return the lighter shade if it exists, else fallback to the original
+  @if map-has-key($shades, $lighter-shade) {
+    @return map-get($shades, $lighter-shade);
+  } @else {
+    @return $current-color; // Fallback if no lighter shade exists
+  }
 }
