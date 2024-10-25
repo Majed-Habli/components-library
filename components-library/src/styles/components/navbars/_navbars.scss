@@ -11,7 +11,7 @@
     @include flex-center;
     
     img {
-      height: 24px;
+      height: 35px;
     }
 
     h4 {
@@ -28,23 +28,18 @@
 
     button {
       border: none;
-      color: #fff;
-      padding: 7px 30px;
+      font-weight: 500;
+      padding: 9px 30px;
       cursor: pointer;
-
-      &:hover {
-        background-color: rgb(95, 94, 94);
-      }
     }
   }
 
   .rounded-icon {
     border-radius: 50%;
-    background-color: #121212;
     display: flex;
     justify-content: center;
-    height: 35px;
-    min-width: 35px;
+    height: 40px;
+    min-width: 40px;
     margin-right: 10px;
     align-items: center;
   }
@@ -71,9 +66,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     width: 100%;
-    background-color: #121212;
   }
 }
 
@@ -88,9 +81,7 @@
   }
 
   .link-#{$color-name} {
-    &:hover {
-      color: get-default-color( $color-name);
-    }
+    color: get-default-color( $color-name);
   }
 
   // Loop for additional shades
@@ -104,8 +95,17 @@
     }
 
     .link-#{$color-name}-#{$shade-name} {
+      color: $shade-value;
       &:hover {
-        color: $shade-value;
+        color: get-lighter-shade($color-name, $shade-name);
+      }
+    }
+
+    button {
+      &.hover-#{$color-name}-#{$shade-name}{
+        &:hover {
+          background-color: $shade-value;
+        }
       }
     }
   }
