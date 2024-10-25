@@ -4,7 +4,7 @@ const DefaultNavbar = () => {
         <>
             <div className="navbar bg-white-500">
                 <div className="navbar-brand">
-                    <div className='rounded-icon'>
+                    <div className='rounded-icon bg-blue-200'>
                         <img src={logo} alt="Fold UI Logo" />
                     </div>
                     <h4>Fold UI</h4>
@@ -13,7 +13,7 @@ const DefaultNavbar = () => {
                     <a className="link-grey-600">Home</a>
                     <a className="link-grey-600">About</a>
                     <a className="link-grey-600">Contacts</a>
-                    <button className="bg-blue-200">Action</button>
+                    <button className="bg-blue-200 hover-blue-400">Action</button>
                 </nav>
             </div>
 
