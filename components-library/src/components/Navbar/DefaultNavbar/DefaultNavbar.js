@@ -10,17 +10,17 @@ const DefaultNavbar = () => {
                     <h4>Fold UI</h4>
                 </div>
                 <nav className="navbar-links">
-                    <a className="link-black-100">Home</a>
-                    <a className="link-black-100">About</a>
-                    <a className="link-black-100">Contacts</a>
-                    <button className="bg-black-300">Action</button>
+                    <a className="link-grey-600">Home</a>
+                    <a className="link-grey-600">About</a>
+                    <a className="link-grey-600">Contacts</a>
+                    <button className="bg-blue-200">Action</button>
                 </nav>
             </div>
 
             <nav className="mobile-links">
-                <a className="link-black-100">Home</a>
-                <a className="link-black-100">About</a>
-                <a className="link-black-100">Contacts</a>
+                <a className="link-grey-600">Home</a>
+                <a className="link-grey-600">About</a>
+                <a className="link-grey-600">Contacts</a>
             </nav>
         </>
     )
