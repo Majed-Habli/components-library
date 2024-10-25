@@ -1,3 +1,6 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+
 .banner-text {
     position: absolute;
     top: 30%;
@@ -11,10 +14,6 @@
       color: rgb(0, 0, 0);
       font-size: 32px;
       font-weight: 500;
-  
-      span {
-        color: blue;
-      }
     }
   
     .banner-description {
@@ -55,3 +54,16 @@
     }
   }
   
+// Generate color classes
+@each $color-name, $shades in $color-palette {
+  .text-span-#{$color-name} {
+    color: get-default-color($color-name);
+  }
+
+  // Loop for additional shades
+  @each $shade-name, $shade-value in $shades {
+    .text-span-#{$color-name}-#{$shade-name} {
+      color: $shade-value;
+    }
+  }
+}
