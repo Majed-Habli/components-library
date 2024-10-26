@@ -8,8 +8,9 @@ const Button = ({text, mode, size, theme}) => {
         [`btn--${mode}`]: mode,
         [`btn--${size}`]: size,
         [`btn--${theme}`]: theme,
+        [`hover--${theme}`]: theme,
       });
-      
+
     return (
         <button className={buttonClass}>
             {text}
