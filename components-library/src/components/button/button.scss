@@ -7,19 +7,37 @@
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    background-color: transparent;
+    background-color: white;
+    outline: none;
 
     &.btn--outlined {
-        border: 1px solid black;
+        border: 1px solid rgb(37, 37, 37);
+        &:hover {
+            background-color: lighten(rgb(37, 37, 37), 80%);
+        }
     }
 
     &.btn--solid {
-        background-color: black;
+        background-color: rgb(37, 37, 37);
         color: white;
+        &:hover {
+            background-color: darken(rgb(37, 37, 37), 10%);
+        }
     }
 
     &.btn--text {
-        color: black;
+        color: rgb(37, 37, 37);
+        &:hover {
+            background-color: lighten(rgb(37, 37, 37), 80%);
+        }
+        &:focus-visible {
+            border: none;
+        }
+    }
+
+    &:focus-visible {
+        border: 2px solid;
+        box-shadow: 0 0 0 4px lighten(rgb(37, 37, 37), 70%);
     }
 }
 
@@ -40,24 +58,35 @@
 // Generate color classes
 @each $color-name, $shades in $color-palette {
     @each $shade-name, $shade-value in $shades {
-        .btn--outlined.btn--#{$color-name}-#{$shade-name}{
-            border-color: $shade-value;
-            color: $shade-value;
-        }
-        
-        .btn--solid.btn--#{$color-name}-#{$shade-name}{
-            background-color: $shade-value;
-            color: white;
-        }
 
-        .btn--text.btn--#{$color-name}-#{$shade-name}{
-            color: $shade-value;
+      .btn--#{$color-name}-#{$shade-name} {
+        &.btn--outlined {
+          border-color: $shade-value;
+          color: $shade-value;
+          &:hover {
+                background-color: lighten($shade-value, 40%);
+            }
         }
+  
+        &.btn--solid {
+          background-color: $shade-value;
+          color: white;
+          &:hover {
+                background-color: darken($shade-value, 10%);
+            }
+        }
+  
+        &.btn--text {
+          color: $shade-value;
+          &:hover {
+                background-color: lighten($shade-value, 24%);
+            }
+        }
+        &:focus-visible {
+            border: 2px solid;
+            box-shadow: 0 0 0 4px lighten($shade-value, 15%);
+        }
+      }
     }
   }
-
-  @include mobile {
-    .button {
-        min-width: 100%;
-    }
-  }
+  
