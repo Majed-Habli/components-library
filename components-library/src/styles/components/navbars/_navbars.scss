@@ -21,17 +21,10 @@
     }
   }
 
-  // Links and button section
+  // Links section
   .navbar-links {
     display: flex;
     align-items: center;
-
-    button {
-      border: none;
-      font-weight: 500;
-      padding: 9px 30px;
-      cursor: pointer;
-    }
   }
 
   .rounded-icon {
@@ -98,14 +91,6 @@
       color: $shade-value;
       &:hover {
         color: get-lighter-shade($color-name, $shade-name);
-      }
-    }
-
-    button {
-      &.hover-#{$color-name}-#{$shade-name}{
-        &:hover {
-          background-color: $shade-value;
-        }
       }
     }
   }
