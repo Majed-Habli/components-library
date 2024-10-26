@@ -1,4 +1,6 @@
 import logo from 'assets/logo.png';
+import Button from '../../button/button';
+
 const DefaultNavbar = () => {
     return (
         <>
@@ -13,7 +15,8 @@ const DefaultNavbar = () => {
                     <a href='' className="link-grey-900">Home</a>
                     <a href='' className="link-grey-900">About</a>
                     <a href='' className="link-grey-900">Contacts</a>
-                    <button className="bg-blue-200 hover-blue-400 text-white">Action</button>
+                    <Button text="Action" mode="solid" size="Medium" theme="blue-200"/>
+
                 </nav>
             </div>
 
