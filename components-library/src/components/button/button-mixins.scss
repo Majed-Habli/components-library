@@ -1,0 +1,4 @@
+@mixin button-size($TopBottomPadding, $LeftRightPadding, $fontSize) {
+    padding: $TopBottomPadding $LeftRightPadding;
+    font-size: $fontSize;
+}

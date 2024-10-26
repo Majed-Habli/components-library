@@ -1,0 +1,63 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+@import './button-mixins.scss';
+
+.button {
+    padding: 3px 9px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: transparent;
+
+    &.btn--outlined {
+        border: 1px solid black;
+    }
+
+    &.btn--solid {
+        background-color: black;
+        color: white;
+    }
+
+    &.btn--text {
+        color: black;
+    }
+}
+
+.button {
+    &.btn--small {
+        @include button-size(5px, 15px, 13px);
+    }
+
+    &.btn--medium {
+        @include button-size(7px, 17px, 14px);
+    }
+
+    &.btn--large {
+        @include button-size(9px, 19px, 16px);
+    }
+}
+
+// Generate color classes
+@each $color-name, $shades in $color-palette {
+    @each $shade-name, $shade-value in $shades {
+        .btn--outlined.btn--#{$color-name}-#{$shade-name}{
+            border-color: $shade-value;
+            color: $shade-value;
+        }
+        
+        .btn--solid.btn--#{$color-name}-#{$shade-name}{
+            background-color: $shade-value;
+            color: white;
+        }
+
+        .btn--text.btn--#{$color-name}-#{$shade-name}{
+            color: $shade-value;
+        }
+    }
+  }
+
+  @include mobile {
+    .button {
+        min-width: 100%;
+    }
+  }
