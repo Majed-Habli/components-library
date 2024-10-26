@@ -17,7 +17,7 @@ const DefaultNavbar = () => {
                 </nav>
             </div>
 
-            <nav className="mobile-links bg-blue-300">
+            <nav className="mobile-links bg-blue-200">
                 <a href='' className="link-grey-100">Home</a>
                 <a href='' className="link-grey-100">About</a>
                 <a href='' className="link-grey-100">Contacts</a>
