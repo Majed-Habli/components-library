@@ -90,3 +90,8 @@
     }
   }
   
+  @include mobile {
+    .button {
+        min-width: 100%;
+    }
+  }
