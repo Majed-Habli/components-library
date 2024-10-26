@@ -15,7 +15,7 @@ const DefaultNavbar = () => {
                     <a href='' className="link-grey-900">Home</a>
                     <a href='' className="link-grey-900">About</a>
                     <a href='' className="link-grey-900">Contacts</a>
-                    <Button text="Action" mode="solid" size="Medium" theme="blue-200"/>
+                    <Button text="Action" mode="solid" size="medium" theme="blue-200"/>
 
                 </nav>
             </div>
