@@ -10,10 +10,17 @@
     background-color: white;
     outline: none;
 
+    &.link {
+        margin: 0 !important;
+        text-align: center;
+    }
+
     &.btn--outlined {
         border: 1px solid rgb(37, 37, 37);
         &:hover {
-            background-color: lighten(rgb(37, 37, 37), 80%);
+            border-color:darken(rgb(37, 37, 37), 10%);
+            color:darken(rgb(37, 37, 37), 10%);
+            border: 2px solid;
         }
     }
 
@@ -28,7 +35,7 @@
     &.btn--text {
         color: rgb(37, 37, 37);
         &:hover {
-            background-color: lighten(rgb(37, 37, 37), 80%);
+            background-color: lighten(rgb(37, 37, 37), 75%);
         }
         &:focus-visible {
             border: none;
@@ -58,13 +65,15 @@
 // Generate color classes
 @each $color-name, $shades in $color-palette {
     @each $shade-name, $shade-value in $shades {
-
+      $opacity : 0.8;
       .btn--#{$color-name}-#{$shade-name} {
         &.btn--outlined {
           border-color: $shade-value;
           color: $shade-value;
           &:hover {
-                background-color: lighten($shade-value, 40%);
+                border-color:darken($shade-value, 10%);
+                color:darken($shade-value, 10%);
+                border: 2px solid;
             }
         }
   
@@ -79,7 +88,7 @@
         &.btn--text {
           color: $shade-value;
           &:hover {
-                background-color: lighten($shade-value, 24%);
+                background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
             }
         }
         &:focus-visible {
