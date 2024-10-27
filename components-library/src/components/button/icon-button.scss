@@ -2,37 +2,39 @@
 @import '../../styles/base/mixins';
 @import './button-mixins.scss';
 
-.button {
-    padding: 3px 9px;
+.IconButton {
+    padding: 10px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
     background-color: white;
     outline: none;
+    @include flex-center;
 
-    &.link {
-        margin: 0 !important;
+    svg {
+        width: 1em;
+        height: 1em;
+        fill: rgb(37, 37, 37);
     }
 
     &.btn--outlined {
         border: 1px solid rgb(37, 37, 37);
         &:hover {
-            border-color:darken(rgb(37, 37, 37), 10%);
-            color:darken(rgb(37, 37, 37), 10%);
-            border: 2px solid;
+            background-color: lighten(rgb(37, 37, 37), 75%);
         }
     }
 
     &.btn--solid {
         background-color: rgb(37, 37, 37);
-        color: white;
+        svg {
+            fill: white;
+        }
         &:hover {
             background-color: darken(rgb(37, 37, 37), 10%);
         }
     }
 
     &.btn--text {
-        color: rgb(37, 37, 37);
         &:hover {
             background-color: lighten(rgb(37, 37, 37), 75%);
         }
@@ -47,17 +49,17 @@
     }
 }
 
-.button {
+.IconButton {
     &.btn--small {
-        @include button-size(5px, 15px, 13px);
+        @include icon-button-size(0.975rem, 0.975rem, 0.625rem);
     }
 
     &.btn--medium {
-        @include button-size(7px, 17px, 14px);
+        @include icon-button-size(1.1rem, 1.1rem, 0.725rem);
     }
-
+    
     &.btn--large {
-        @include button-size(9px, 19px, 16px);
+        @include icon-button-size(1.45rem, 1.45rem, 0.825rem);
     }
 }
 
@@ -70,15 +72,17 @@
           border-color: $shade-value;
           color: $shade-value;
           &:hover {
-                border-color:darken($shade-value, 10%);
-                color:darken($shade-value, 10%);
-                border: 2px solid;
+                border-color: $shade-value !important;
+                background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
+                border: 1px solid;
             }
         }
   
         &.btn--solid {
           background-color: $shade-value;
-          color: white;
+          svg {
+            fill: white;
+          }
           &:hover {
                 background-color: darken($shade-value, 10%);
             }
@@ -90,22 +94,15 @@
                 background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
             }
         }
+
+        svg {
+            fill: $shade-value;
+        }
+
         &:focus-visible {
             border: 2px solid;
             box-shadow: 0 0 0 4px lighten($shade-value, 15%);
         }
       }
-    }
-  }
-  
-  @include mobile {
-    .button {
-        min-width: 100%;
-    }
-    .link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: fit-content;
     }
   }
