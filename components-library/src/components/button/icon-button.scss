@@ -1,0 +1,107 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+@import './button-mixins.scss';
+
+.IconButton {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: white;
+    outline: none;
+    @include flex-center;
+
+    svg {
+        width: 1em;
+        height: 1em;
+        fill: rgb(37, 37, 37);
+    }
+
+    &.btn--outlined {
+        border: 1px solid rgb(37, 37, 37);
+        &:hover {
+            border-color:darken(rgb(37, 37, 37), 10%);
+            color:darken(rgb(37, 37, 37), 10%);
+            border: 2px solid;
+        }
+    }
+
+    &.btn--solid {
+        background-color: rgb(37, 37, 37);
+        color: white;
+        &:hover {
+            background-color: darken(rgb(37, 37, 37), 10%);
+        }
+    }
+
+    &.btn--text {
+        color: rgb(37, 37, 37);
+        &:hover {
+            background-color: lighten(rgb(37, 37, 37), 75%);
+        }
+        &:focus-visible {
+            border: none;
+        }
+    }
+
+    &:focus-visible {
+        border: 2px solid;
+        box-shadow: 0 0 0 4px lighten(rgb(37, 37, 37), 70%);
+    }
+}
+
+.IconButton {
+    &.btn--small {
+        @include icon-button-size(0.975rem, 0.975rem, 0.625rem);
+    }
+
+    &.btn--medium {
+        @include icon-button-size(1.1rem, 1.1rem, 0.725rem);
+    }
+    
+    &.btn--large {
+        @include icon-button-size(1.45rem, 1.45rem, 0.825rem);
+    }
+}
+
+// Generate color classes
+@each $color-name, $shades in $color-palette {
+    @each $shade-name, $shade-value in $shades {
+      $opacity : 0.8;
+      .btn--#{$color-name}-#{$shade-name} {
+        &.btn--outlined {
+          border-color: $shade-value;
+          color: $shade-value;
+          &:hover {
+                border-color:darken($shade-value, 10%);
+                color:darken($shade-value, 10%);
+                border: 2px solid;
+            }
+        }
+  
+        &.btn--solid {
+          background-color: $shade-value;
+          color: white;
+          &:hover {
+                background-color: darken($shade-value, 10%);
+            }
+        }
+  
+        &.btn--text {
+          color: $shade-value;
+          &:hover {
+                background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
+            }
+        }
+
+        svg {
+            fill: $shade-value;
+        }
+
+        &:focus-visible {
+            border: 2px solid;
+            box-shadow: 0 0 0 4px lighten($shade-value, 15%);
+        }
+      }
+    }
+  }
