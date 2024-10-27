@@ -12,7 +12,6 @@
 
     &.link {
         margin: 0 !important;
-        text-align: center;
     }
 
     &.btn--outlined {
@@ -102,5 +101,11 @@
   @include mobile {
     .button {
         min-width: 100%;
+    }
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: fit-content;
     }
   }
