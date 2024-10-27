@@ -1,5 +1,4 @@
 import  "./hero-section.scss";
-import Button from '../button/button';
 import LinkButton from '../button/link-button';
 
 const heroSection = () => {
