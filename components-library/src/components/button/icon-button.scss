@@ -20,22 +20,21 @@
     &.btn--outlined {
         border: 1px solid rgb(37, 37, 37);
         &:hover {
-            border-color:darken(rgb(37, 37, 37), 10%);
-            color:darken(rgb(37, 37, 37), 10%);
-            border: 2px solid;
+            background-color: lighten(rgb(37, 37, 37), 75%);
         }
     }
 
     &.btn--solid {
         background-color: rgb(37, 37, 37);
-        color: white;
+        svg {
+            fill: white;
+        }
         &:hover {
             background-color: darken(rgb(37, 37, 37), 10%);
         }
     }
 
     &.btn--text {
-        color: rgb(37, 37, 37);
         &:hover {
             background-color: lighten(rgb(37, 37, 37), 75%);
         }
@@ -73,15 +72,17 @@
           border-color: $shade-value;
           color: $shade-value;
           &:hover {
-                border-color:darken($shade-value, 10%);
-                color:darken($shade-value, 10%);
-                border: 2px solid;
+                border-color: $shade-value !important;
+                background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
+                border: 1px solid;
             }
         }
   
         &.btn--solid {
           background-color: $shade-value;
-          color: white;
+          svg {
+            fill: white;
+          }
           &:hover {
                 background-color: darken($shade-value, 10%);
             }
