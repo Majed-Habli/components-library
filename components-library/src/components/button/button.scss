@@ -12,6 +12,7 @@
 
     &.link {
         margin: 0 !important;
+        color: rgb(37, 37, 37);
     }
 
     &.btn--outlined {
@@ -19,7 +20,7 @@
         &:hover {
             border-color:darken(rgb(37, 37, 37), 10%);
             color:darken(rgb(37, 37, 37), 10%);
-            border: 2px solid;
+            background-color: lighten(rgb(37, 37, 37), 75%);
         }
     }
 
@@ -72,7 +73,7 @@
           &:hover {
                 border-color:darken($shade-value, 10%);
                 color:darken($shade-value, 10%);
-                border: 2px solid;
+                background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
             }
         }
   
@@ -90,6 +91,7 @@
                 background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
             }
         }
+
         &:focus-visible {
             border: 2px solid;
             box-shadow: 0 0 0 4px lighten($shade-value, 15%);
