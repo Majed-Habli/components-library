@@ -9,7 +9,7 @@ const DefaultNavbar = () => {
                     <div className='rounded-icon bg-blue-500'>
                         <img src={logo} alt="Fold UI Logo" />
                     </div>
-                    <h4>Fold UI</h4>
+                    <h2>Fold UI</h2>
                 </div>
                 <nav className="navbar-links">
                     <a href='' className="link-grey-900">Home</a>
