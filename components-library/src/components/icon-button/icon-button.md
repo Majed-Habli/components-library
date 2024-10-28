@@ -33,7 +33,7 @@ import IconButton from './icon-button';
 <IconButton iconName="DevicePhoneMobileIcon" size="small"  mode="text" theme="blue-300"/>
 
 | **Prop**    | **Option**  | **Description**                              |
-|----------   |-------------|----------------------------------------------|
+|-------------|-------------|----------------------------------------------|
 | `mode`      | `outlined`  | No background color, border color applies.   |
 |             | `solid`     | Background color applies.                    |
 |             | `text`      | No border or background color.               |

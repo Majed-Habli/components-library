@@ -8,6 +8,15 @@
     }
 }
 
+@mixin text-icon-button-size ($width, $height, $TopBottomPadding, $LeftRightPadding, $fontSize) {
+    padding: $TopBottomPadding $LeftRightPadding;
+    font-size: $fontSize;
+    svg {
+        width: $width;
+        height: $height;
+    }
+}
+
 @mixin button-size($TopBottomPadding, $LeftRightPadding, $fontSize) {
     padding: $TopBottomPadding $LeftRightPadding;
     font-size: $fontSize;

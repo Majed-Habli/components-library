@@ -1,6 +1,6 @@
 @import '../../styles/base/variables';
 @import '../../styles/base/mixins';
-@import './button-mixins.scss';
+@import '../button/button-mixins.scss';
 
 .IconButton {
     padding: 10px;
@@ -17,14 +17,14 @@
         fill: rgb(37, 37, 37);
     }
 
-    &.btn--outlined {
+    &.i--btn--outlined {
         border: 1px solid rgb(37, 37, 37);
         &:hover {
             background-color: lighten(rgb(37, 37, 37), 75%);
         }
     }
 
-    &.btn--solid {
+    &.i--btn--solid {
         background-color: rgb(37, 37, 37);
         svg {
             fill: white;
@@ -34,7 +34,7 @@
         }
     }
 
-    &.btn--text {
+    &.i--btn--text {
         &:hover {
             background-color: lighten(rgb(37, 37, 37), 75%);
         }
@@ -50,15 +50,15 @@
 }
 
 .IconButton {
-    &.btn--small {
+    &.i--btn--small {
         @include icon-button-size(0.975rem, 0.975rem, 0.625rem);
     }
 
-    &.btn--medium {
+    &.i--btn--medium {
         @include icon-button-size(1.1rem, 1.1rem, 0.725rem);
     }
     
-    &.btn--large {
+    &.i--btn--large {
         @include icon-button-size(1.45rem, 1.45rem, 0.825rem);
     }
 }
@@ -67,8 +67,8 @@
 @each $color-name, $shades in $color-palette {
     @each $shade-name, $shade-value in $shades {
       $opacity : 0.8;
-      .btn--#{$color-name}-#{$shade-name} {
-        &.btn--outlined {
+      .i--btn--#{$color-name}-#{$shade-name} {
+        &.i--btn--outlined {
           border-color: $shade-value;
           color: $shade-value;
           &:hover {
@@ -78,7 +78,7 @@
             }
         }
   
-        &.btn--solid {
+        &.i--btn--solid {
           background-color: $shade-value;
           svg {
             fill: white;
@@ -88,7 +88,7 @@
             }
         }
   
-        &.btn--text {
+        &.i--btn--text {
           color: $shade-value;
           &:hover {
                 background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
@@ -100,7 +100,7 @@
         }
 
         &:focus-visible {
-            border: 2px solid;
+            border: 2px solid white;
             box-shadow: 0 0 0 4px lighten($shade-value, 15%);
         }
       }

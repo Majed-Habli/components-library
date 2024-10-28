@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from 'classnames';
-import './button.scss';
+import '../button/button.scss';
 
 const LinkButton = ({text, mode, size, theme, href}) => {
     

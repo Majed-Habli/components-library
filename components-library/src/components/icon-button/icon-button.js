@@ -6,10 +6,10 @@ import * as Icons from '@heroicons/react/24/solid';
 const IconButton = ({iconName, mode, size, theme}) => {
 
     const buttonClass = classNames('IconButton', {
-        [`btn--${mode}`]: mode,
-        [`btn--${size}`]: size,
-        [`btn--${theme}`]: theme,
-        [`hover--${theme}`]: theme,
+        [`i--btn--${mode}`]: mode,
+        [`i--btn--${size}`]: size,
+        [`i--btn--${theme}`]: theme,
+        [`i--hover--${theme}`]: theme,
       });
 
     const IconComponent = Icons[iconName];
