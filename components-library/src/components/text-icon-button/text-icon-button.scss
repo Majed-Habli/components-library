@@ -1,6 +1,6 @@
 @import '../../styles/base/variables';
 @import '../../styles/base/mixins';
-@import './button-mixins.scss';
+@import '../button/button-mixins.scss';
 
 .textIconButton {
     padding: 3px 9px;
