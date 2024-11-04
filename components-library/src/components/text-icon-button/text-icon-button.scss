@@ -13,8 +13,10 @@
     align-items: center;
     gap: 5px;
 
-    &.link {
-        margin: 0 !important;
+    svg {
+        width: 1em;
+        height: 1em;
+        fill: rgb(37, 37, 37);
     }
 
     &.tib--btn--outlined {
@@ -28,6 +30,9 @@
     &.tib--btn--solid {
         background-color: rgb(37, 37, 37);
         color: white;
+        svg {
+            fill: white;
+        }
         &:hover {
             background-color: darken(rgb(37, 37, 37), 10%);
         }
@@ -81,7 +86,9 @@
         &.tib--btn--solid {
           background-color: $shade-value;
           color: white;
-          fill: white;
+          svg {
+            fill: white;
+          }
           &:hover {
                 background-color: darken($shade-value, 10%);
             }
@@ -94,6 +101,11 @@
                 background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
             }
         }
+
+        svg {
+            fill: $shade-value;
+        }
+
         &:focus-visible {
             box-shadow: 0 0 0 4px lighten($shade-value, 15%);
         }
