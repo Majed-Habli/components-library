@@ -43,5 +43,7 @@ import LinkButton from './link-button';
 | `size`       | `small`             | Padding `5px 15px`, font size `13px`.              |
 |              | `medium`            | Padding `7px 17px`, font size `14px`.              |
 |              | `large`             | Padding `9px 19px`, font size `16px`.              |
+| `text`       | *string*            | The button content text.                           |
+| `href`       | *link*              | The link for navigation.                           |
 | `ariaLabel`  | *string*            | Used for explaining the button use case.           |
 | `disabled`   | `true` or *empty*   | Optional use for explaining the button use case.   |
