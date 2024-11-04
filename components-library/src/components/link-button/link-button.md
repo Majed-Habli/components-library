@@ -35,11 +35,13 @@ import LinkButton from './link-button';
 <LinkButton text="Discover Components" mode="text" size="small" theme="blue-300" href="link"/>
 
 
-| **Prop** | **Option**  | **Description**                              |
-|----------|-------------|----------------------------------------------|
-| `mode`   | `outlined`  | No background color, border color applies.   |
-|          | `solid`     | Background color applies.                    |
-|          | `text`      | No border or background color.               |
-| `size`   | `small`     | Padding `5px 15px`, font size `13px`.        |
-|          | `medium`    | Padding `7px 17px`, font size `14px`.        |
-|          | `large`     | Padding `9px 19px`, font size `16px`.        |
+| **Prop**     | **Option**          | **Description**                                    |
+|--------------|-------------|------------------------------------------------------------|
+| `mode`       | `outlined`          | No background color, border color applies.         |
+|              | `solid`             | Background color applies.                          |
+|              | `text`              | No border or background color.                     |
+| `size`       | `small`             | Padding `5px 15px`, font size `13px`.              |
+|              | `medium`            | Padding `7px 17px`, font size `14px`.              |
+|              | `large`             | Padding `9px 19px`, font size `16px`.              |
+| `ariaLabel`  | *string*            | Used for explaining the button use case.           |
+| `disabled`   | `true` or *empty*   | Optional use for explaining the button use case.   |
