@@ -2,7 +2,7 @@ import React from "react";
 import classNames from 'classnames';
 import './button.scss';
 
-const Button = ({text, mode, size, theme}) => {
+const Button = ({text, mode, size, theme, ariaLabel}) => {
 
     const buttonClass = classNames('button', {
         [`btn--${mode}`]: mode,
@@ -12,7 +12,7 @@ const Button = ({text, mode, size, theme}) => {
       });
 
     return (
-        <button className={buttonClass}>
+        <button className={buttonClass} aria-label={ariaLabel || text}>
             {text}
         </button>
     )
