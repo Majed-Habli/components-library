@@ -32,13 +32,14 @@ import IconButton from './icon-button';
 // Text Small IconButton
 <IconButton iconName="DevicePhoneMobileIcon" size="small"  mode="text" theme="blue-300"/>
 
-| **Prop**    | **Option**  | **Description**                              |
-|-------------|-------------|----------------------------------------------|
-| `mode`      | `outlined`  | No background color, border color applies.   |
-|             | `solid`     | Background color applies.                    |
-|             | `text`      | No border or background color.               |
-| `size`      | `small`     | Padding `5px 15px`, font size `13px`.        |
-|             | `medium`    | Padding `7px 17px`, font size `14px`.        |
-|             | `large`     | Padding `9px 19px`, font size `16px`.        |
-| `iconName`  | `name`      | The Icon label.                              |
-
+| **Prop**     | **Option**           | **Description**                                    |
+|------------- |----------------------|----------------------------------------------------|
+| `mode`       | `outlined`           | No background color, border color applies.         |
+|              | `solid`              | Background color applies.                          |
+|              | `text`               | No border or background color.                     |
+| `size`       | `small`              | Padding `5px 15px`, font size `13px`.              |
+|              | `medium`             | Padding `7px 17px`, font size `14px`.              |
+|              | `large`              | Padding `9px 19px`, font size `16px`.              |
+| `iconName`   | `name`               | The Icon label.                                    |
+| `ariaLabel`  | *string*             | Used for explaining the button use case.           |
+| `disabled`   | `true` or *empty*    | Optional use for explaining the button use case.   |

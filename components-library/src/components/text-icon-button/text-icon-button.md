@@ -34,15 +34,16 @@ import TextIconButton from './icon-button';
 // Text Small TextIconButton
 <TextIconButton iconName="DevicePhoneMobileIcon" size="small"  mode="text" theme="blue-300"/>
 
-| **Prop**       | **Option**  | **Description**                              |
-|----------------|-------------|----------------------------------------------|
-| `mode`         | `outlined`  | No background color, border color applies.   |
-|                | `solid`     | Background color applies.                    |
-|                | `text`      | No border or background color.               |
-| `size`         | `small`     | Padding `5px 15px`, font size `13px`.        |
-|                | `medium`    | Padding `7px 17px`, font size `14px`.        |
-|                | `large`     | Padding `9px 19px`, font size `16px`.        |
-| `iconName`     | `name`      | The Icon label.                              |
-| `leadingIcon`  | `name`      | Icon positioned before the text.             |
-| `trailingIcon` | `name`      | Icon positioned after the text.              |
-
+| **Prop**       | **Option**           | **Description**                                    |
+|----------------|----------------------|----------------------------------------------------|
+| `mode`         | `outlined`           | No background color, border color applies.         |
+|                | `solid`              | Background color applies.                          |
+|                | `text`               | No border or background color.                     |
+| `size`         | `small`              | Padding `5px 15px`, font size `13px`.              |
+|                | `medium`             | Padding `7px 17px`, font size `14px`.              |
+|                | `large`              | Padding `9px 19px`, font size `16px`.              |
+| `text`         | *string*             | The button content text.                           |
+| `leadingIcon`  | `name`               | Icon positioned before the text.                   |
+| `trailingIcon` | `name`               | Icon positioned after the text.                    |
+| `ariaLabel`    | *string*             | Optional use for explaining the button use case.   |
+| `disabled`     | `true` or *empty*    | Optional use for explaining the button use case.   |

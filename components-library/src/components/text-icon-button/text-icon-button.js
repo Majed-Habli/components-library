@@ -3,7 +3,7 @@ import './text-icon-button.scss';
 import classNames from 'classnames';
 import * as Icons from '@heroicons/react/24/solid';
 
-const TextIconButton = ({text, mode, size, theme, leadingIcon, trailingIcon}) => {
+const TextIconButton = ({text, mode, size, theme, leadingIcon, trailingIcon, ariaLabel, disabled}) => {
 
     const buttonClass = classNames('textIconButton', {
         [`tib--btn--${mode}`]: mode,
@@ -16,10 +16,10 @@ const TextIconButton = ({text, mode, size, theme, leadingIcon, trailingIcon}) =>
     const TrailingIconComponent = trailingIcon ? Icons[trailingIcon] : null;
 
     return (
-        <button className={buttonClass}>
-            {LeadingIconComponent && <LeadingIconComponent className="leading-icon"/>}
+        <button className={buttonClass} aria-label={ariaLabel || text} disabled={disabled} >
+            {LeadingIconComponent && <LeadingIconComponent className="leading-icon" aria-hidden="true"/>}
             {text}
-            {TrailingIconComponent && <TrailingIconComponent className="trailing-icon"/>}
+            {TrailingIconComponent && <TrailingIconComponent className="trailing-icon" aria-hidden="true"/>}
         </button>
     );
 };
