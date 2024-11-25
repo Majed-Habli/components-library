@@ -1,0 +1,39 @@
+.form-group {
+    --pad: .75rem;
+    position: relative;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(239, 230, 230);
+
+    label {
+        position: absolute;
+        left: 1.5rem;
+        top: 1.5rem;
+        background: white;
+        color: #A9A9A9;
+        padding-inline: .3em;
+        transition: transform 200ms;
+        pointer-events: none;
+        transform-origin: left;
+        translate: -.3em;
+    }
+
+    input {
+        padding: var(--pad);
+        background-color: var(--bg);
+        border: none;
+        border-bottom: 1px solid #eee;
+        color: inherit;
+        width: 90%;
+        outline: none;
+      }
+
+    input::placeholder {
+        opacity: 0;
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label {
+        transform: translateY(calc(-50% - .60rem)) scale(.8);
+        color: #A9A9A9;
+    }
+}
