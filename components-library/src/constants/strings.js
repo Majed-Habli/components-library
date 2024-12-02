@@ -10,9 +10,9 @@ export const WidgetsMetaData = [
       description: "Use buttons to allow users to take action within your site or app.",
       preview: (
         <div className="preview-container">
-            <Button text="Discover" mode="solid" size="small" theme="green-700" />
-            <Button text="Discover" mode="solid" size="medium" theme="green-700" />
-            <Button text="Discover" mode="solid" size="large" theme="green-700" />
+            <Button text="Button" mode="solid" size="small" theme="blue-400" />
+            <Button text="Button" mode="solid" size="medium" theme="blue-400" />
+            <Button text="Button" mode="solid" size="large" theme="blue-400" />
         </div>
     ),
     },
