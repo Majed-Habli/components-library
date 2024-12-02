@@ -19,11 +19,11 @@ export const WidgetsMetaData = [
     {
       label:"Text-Icon button",
       icon: tib,
-      description: "Jacob",
+      description: "Combine text and icons for clearer actions.",
     },
     {
       label:"Checkbox",
       icon: Checkbox,
-      description: "Jacob",
+      description: "let users choose from multiple actions or options.",
     },
   ];
