@@ -1,0 +1,65 @@
+.card-container {
+    width: 400px;
+    background-color: #F9F9F9;
+    position: absolute;
+    top: 10px;
+    border: 1px solid #DBDBDB;
+    box-shadow: 0 2px 0 3px lighten(rgb(0,0,0), 96%);
+    right: -415px;
+    border-radius: 6px;
+    
+    .preview-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f1f1f1;
+
+        .column-preview {
+            flex-direction: column;
+            width: fit-content;
+            gap: 1rem;
+            display: flex;
+            padding: 4rem 0;
+            align-items: center;
+        }
+
+        .row-preview {
+            gap: 1rem;
+            display: flex;
+            padding: 4rem 0;
+            justify-content: center;
+        }
+    }
+
+    .information-section {
+        display: flex;
+        padding: 2rem 0 2rem 2rem;
+        gap: 1rem;
+        align-items: start;
+
+        img {
+            width: 40px;
+            margin-top: 8px;
+        }
+    }
+
+    .component-information {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+            margin: 0;
+        }
+
+        .component-name {
+            font-size: 20px;
+        }
+
+        .component-description {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+        }
+    }
+}
