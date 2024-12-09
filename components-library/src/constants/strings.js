@@ -3,6 +3,7 @@ import Checkbox from "assets/Checkbox-icon.svg";
 import tib from "assets/text-Icon-Button.svg";
 import Button from "../components/button/button";
 import TextIconButton from "../components/text-icon-button/text-icon-button";
+import CheckBoxPreview from "components/checkbox/checkbox-preview";
 
 export const WidgetsMetaData = [
     {
@@ -36,5 +37,8 @@ export const WidgetsMetaData = [
       label:"Checkbox",
       icon: Checkbox,
       description: "let users choose from multiple actions or options.",
+      preview: (
+        <CheckBoxPreview />
+      ),
     },
   ];
