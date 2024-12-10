@@ -1,7 +1,40 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+
 .checkbox-container {
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    &.cb--small {
+        .checkbox-label {
+            font-size: 0.8750em;
+        }
+        .checkbox-custom::before {
+            width: 0.5em;
+            height: 0.45em;
+        }
+    }
+
+    &.cb--medium {
+        .checkbox-label {
+            font-size: 1.05em;
+        }
+        .checkbox-custom::before {
+            width: 0.6em;
+            height: 0.5em;
+        }
+    }
+
+    &.cb--large {
+        .checkbox-label {
+            font-size: 1.25em;
+        }
+        .checkbox-custom::before {
+            width: 0.7em;
+            height: 0.6em;
+        }
+    }
 
     .checkbox-input {
         display: none;
@@ -11,15 +44,14 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 14px;
+        font-size: 0.8750em;
         color: #333;
         cursor: pointer;
     }
 
-    /* Custom checkbox */
     .checkbox-custom {
-        width: 16px;
-        height: 16px;
+        width: 1em;
+        height: 1em;
         border: 2px solid #ccc;
         border-radius: 4px;
         background-color: #fff;
@@ -30,11 +62,10 @@
         transition: all 0.2s ease;
     }
 
-    /* Add a checkmark */
     .checkbox-custom::before {
         content: "";
-        width: 9px;
-        height: 6px;
+        width: 0.6em;
+        height: 0.5em;
         background-color: #fff;
         clip-path: polygon(14% 44%, 0% 60%, 40% 100%, 100% 0%, 80% 0%, 35% 85%);
         opacity: 0;
@@ -48,13 +79,27 @@
     }
 }
 
-/* Checked state styles */
-.checkbox-input:checked + .checkbox-label .checkbox-custom {
-    border-color: #45ac12;
-    background-color: #ed5f00;
-}
+/* Theme-based styles */
+@each $color-name, $shades in $color-palette {
+    @each $shade-name, $shade-value in $shades {
+      $opacity: 0.8;
+  
+      .cb--#{$color-name}-#{$shade-name} {
+        .checkbox-label {
+          .checkbox-custom {
+            border-color: $shade-value;
+  
+            &:hover {
+              border-color: darken($shade-value, 10%);
+              background-color: mix(rgb(255, 255, 255), $shade-value, $opacity * 100% + 2);
+            }
+          }
+        }
 
-/* Hover effect for the checkbox */
-.checkbox-label:hover .checkbox-custom {
-    border-color: #007bff;
-}
+        .checkbox-input:checked + .checkbox-label .checkbox-custom {
+          background-color: $shade-value;
+          border-color: darken($shade-value, 10%);
+        }
+      }
+    }
+  }
