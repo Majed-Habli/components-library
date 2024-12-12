@@ -17,6 +17,7 @@ const CheckBox = ({ id, name, label, checked, onChange, size, theme }) => {
                 name={name}
                 className="checkbox-input"
                 checked={checked}
+                aria-checked= {checked}
                 onChange={onChange}
             />
             <label htmlFor={id} className={"checkbox-label"}>
