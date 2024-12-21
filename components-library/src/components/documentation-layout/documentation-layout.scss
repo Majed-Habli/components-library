@@ -1,0 +1,39 @@
+@import '../../styles/base/variables';
+
+.documentation-layout {
+    $grey-700: map-get(map-get($color-palette, grey), 700);
+    $grey-600: map-get(map-get($color-palette, grey), 600);
+
+    h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 500;
+        color: $grey-700;
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: normal;
+        width: 650px;
+        line-height: 1.5rem;
+        color: $grey-600;
+    }
+
+    .documentation-section {
+        margin-top: 2rem;
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        p{
+            font-weight: normal;
+        }
+
+        ul > li {
+        line-height: 1.8rem;
+        color: $grey-600;
+        }
+    }
+}
