@@ -1,3 +1,4 @@
+import "./components.scss";
 import React, { useState } from "react";
 import Sidebar from "components/navigation/sidebar";
 import { DocumentationContent } from "../../constants/strings";
@@ -11,7 +12,7 @@ const Components = () => {
   console.log(selectedDocumentation)
 
   return (
-    <div className="main">
+    <div className="page-container">
       <Sidebar onSelectComponent={setSelectedComponent} />
       <div className="documentation-container">
         {selectedDocumentation ? (
