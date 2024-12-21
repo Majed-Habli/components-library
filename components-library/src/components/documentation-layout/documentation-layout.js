@@ -16,6 +16,7 @@ const DocumentationLayout = ({ component }) => {
           descriptionAfter={section.descriptionAfter}
         />
       ))}
+      {/* preview component */}
     </div>
   );
 };
