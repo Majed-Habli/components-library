@@ -7,6 +7,7 @@ import CheckBoxPreview from "components/checkbox/checkbox-preview";
 
 export const WidgetsMetaData = [
     {
+      id: "BTN-001",
       label:"Button",
       icon: ButtonImage,
       description: "Use buttons to allow users to take action within your site or app.",
@@ -21,6 +22,7 @@ export const WidgetsMetaData = [
       ),
     },
     {
+      id: "TIB-001",
       label:"Text-Icon button",
       icon: tib,
       description: "Combine text and icons for clearer actions.",
@@ -34,6 +36,7 @@ export const WidgetsMetaData = [
       ),
     },
     {
+      id: "CHK-001",
       label:"Checkbox",
       icon: Checkbox,
       description: "let users choose from multiple actions or options.",
@@ -42,3 +45,20 @@ export const WidgetsMetaData = [
       ),
     },
   ];
+
+  //Documentation strings for the components
+  export const DocumentationContent = [
+    {
+      id: "BTN-001",
+      content: "This is the documentation for the Button component...",
+    },
+    {
+      id: "TIB-001",
+      content: "This is the documentation for the Checkbox component...",
+    },
+    {
+      id: "CHK-001",
+      content: "This is the documentation for the Input Field component...",
+    },
+  ];
+  
