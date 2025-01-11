@@ -1,0 +1,30 @@
+.component-preview {
+    max-width: 700px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid #DADADA;
+
+    .preview-title , .code-type{
+        color: #171717;
+        font-size: 16px;
+        font-weight: 100;
+        margin: 0;
+        width: auto;
+        background-color: #F8F8F8;
+        padding: 10px 1rem;
+    }
+
+    .component-container {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        padding: 37px 0;
+        border-top: 1px solid #DADADA;
+        border-bottom: 1px solid #DADADA;
+    }
+
+    .code-snippet {
+        font-size: 14px;
+    }
+}
