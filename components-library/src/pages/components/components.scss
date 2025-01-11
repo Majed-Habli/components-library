@@ -1,9 +1,10 @@
 .page-container {
     display: flex;
-    height: 100vh;
 }
 
 .documentation-container{
+    height: 82vh;
+    overflow: auto;
     padding: 2rem 4rem;
     flex: 1;
 }
