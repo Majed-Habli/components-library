@@ -1,6 +1,7 @@
 import React from "react";
 import DocumentationSection from "./documentation-section";
 import "./documentation-layout.scss";
+import ComponentPreview from "components/component-preview/component-preview";
 
 const DocumentationLayout = ({ component }) => {
   return (
@@ -16,7 +17,7 @@ const DocumentationLayout = ({ component }) => {
           descriptionAfter={section.descriptionAfter}
         />
       ))}
-      {/* preview component */}
+      <ComponentPreview id="BTN-001"/>
     </div>
   );
 };
