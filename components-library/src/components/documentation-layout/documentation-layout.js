@@ -17,7 +17,7 @@ const DocumentationLayout = ({ component }) => {
           descriptionAfter={section.descriptionAfter}
         />
       ))}
-      <ComponentPreview id="BTN-001"/>
+      <ComponentPreview id={component.id}/>
     </div>
   );
 };
