@@ -67,11 +67,29 @@ export const WidgetsMetaData = [
     },
     {
       id: "TIB-001",
-      content: "This is the documentation for the Checkbox component...",
+      content: "This is the documentation for the text icon button component...",
     },
     {
       id: "CHK-001",
-      content: "This is the documentation for the Input Field component...",
+      content: "This is the documentation for the Checkbox component...",
     },
   ];
+  
+  export const componentMap = {
+    "BTN-001": {
+      component: Button,
+      variants: [
+        { label: 'Solid', props: { mode: 'solid', text: 'Solid Button', theme: 'blue-400',size: "medium" } },
+        { label: 'Outlined', props: { mode: 'outlined', text: 'Outlined Button', theme: 'blue-400',size: "medium" } },
+        { label: 'Text', props: { mode: 'text', text: 'Text Button', theme: 'blue-400',size: "medium" } },
+      ],
+    },
+    "CHK-001": {
+      component: Checkbox,
+      variants: [
+        { label: 'Checked', props: { checked: true } },
+        { label: 'Unchecked', props: { checked: false } },
+      ],
+    },
+  };
   
