@@ -20,7 +20,7 @@
 }
 
 .accordion {
-  background-color: transparent;
+  background-color: rgb(235, 232, 232);
   text-transform: uppercase;
   cursor: pointer;
   padding: 18px;
@@ -38,15 +38,15 @@
 }
 
 .accordion.active {
-  background-color: #1b1e1f;
+  background-color: #6da6b8;
 }
 
 .accordion:hover {
-  background-color: #1B1E1F;
+  background-color: #8db7c5;
 }
 
 [class^="icon-"] {
-  border: 2px solid #84D5D9;
+  border: 2px solid #000202;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -63,6 +63,8 @@
   position: absolute;
   top: 20px;
   right: 12px;
+  color: black;
+  width: 20px;
   transition: transform 0.4s ease;
 }
 
