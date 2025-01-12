@@ -1,28 +1,29 @@
 import React, { useState, useRef } from "react";
-import "./accordion.css";
+import "./accordion.scss";
+import * as Icons from '@heroicons/react/24/solid';
 
-const Accordion = () => {
+const Accordion = ({index, iconName}) => {
   const [activeLeftIndex, setActiveLeftIndex] = useState(null);
 
   const panelRefs = useRef([]);
+  const IconComponent = Icons[iconName];
 
   const toggleAccordion = (index) => {
       setActiveLeftIndex(activeLeftIndex === index ? null : index);
     }
-  };
-
+    console.log(Icons);
   return (
-    <div key={index} className="faq-item">
+    <div key={index} className="accordion-container">
       <button
         className={`accordion ${activeLeftIndex === index ? "active" : ""}`}
         onClick={() => toggleAccordion(index)}
       >
-        <span className={`icon-${item.icon}`} aria-hidden="true">
-          <img src={`./${item.icon}.svg`} alt={`${item.icon} icon`} />
+        <span className={`icon-${iconName}`} aria-hidden="true">
+          <img src={`./${iconName}.svg`} alt={`${iconName} icon`} />
         </span>
-        <span className="button-text">{item.question}</span>
-        <span className="chevron-arrow-icon" aria-hidden="true">
-          <img src="./chevron-down.svg" alt="Chevron Down" />
+        <span className="button-text">Statement</span>
+        <span className="chevron-arrow-icon" >
+          <IconComponent aria-hidden="true"/>
         </span>
       </button>
       <div
@@ -33,9 +34,10 @@ const Accordion = () => {
           opacity: activeLeftIndex === index ? "1" : "0",
         }}
       >
-        <div>{item.answer}</div>
+        <div>Accordian text</div>
       </div>
     </div>
   )
+};
 
 export default Accordion;
