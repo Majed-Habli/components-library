@@ -50,13 +50,9 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
+  width: 20px;
   justify-content: center;
   padding: 2px;
-}
-
-[class^="icon-"] img {
- width: 24px;
- height: 24px;
 }
 
 .chevron-arrow-icon {
@@ -68,12 +64,12 @@
   transition: transform 0.4s ease;
 }
 
-.accordion.active .chevron-arrow-icon {
+.accordion.active .chevron-arrow-icon svg {
   transform: rotate(180deg);
 }
 
 .button-text {
   max-width: 460px;
   min-width: 200px;
-  color: #e1dede !important;
+  color: #383737 !important;
 }
