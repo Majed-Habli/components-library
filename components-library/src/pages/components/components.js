@@ -9,7 +9,6 @@ const Components = () => {
   const selectedDocumentation = DocumentationContent.find(
     (doc) => doc.id === selectedComponent
   );
-  console.log(selectedDocumentation)
 
   return (
     <div className="page-container">
