@@ -1,0 +1,77 @@
+.faq-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+
+.faq-column {
+  flex: 1;
+}
+
+.panel {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;padding: 0 18px;
+  transition: height 0.4s ease, opacity 0.4s ease;
+}
+
+.faq-item .accordion.active + .panel {
+  opacity: 1;
+}
+
+.accordion {
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 18px;
+  min-width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  border-bottom: 1px solid #878787;
+}
+
+.accordion.active {
+  background-color: #1b1e1f;
+}
+
+.accordion:hover {
+  background-color: #1B1E1F;
+}
+
+[class^="icon-"] {
+  border: 2px solid #84D5D9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+[class^="icon-"] img {
+ width: 24px;
+ height: 24px;
+}
+
+.chevron-arrow-icon {
+  position: absolute;
+  top: 20px;
+  right: 12px;
+  transition: transform 0.4s ease;
+}
+
+.accordion.active .chevron-arrow-icon {
+  transform: rotate(180deg);
+}
+
+.button-text {
+  max-width: 460px;
+  min-width: 200px;
+  color: #e1dede !important;
+}
