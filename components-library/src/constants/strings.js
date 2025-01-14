@@ -2,8 +2,10 @@ import ButtonImage from "assets/Button.svg";
 import Checkbox from "assets/Checkbox-icon.svg";
 import tib from "assets/text-Icon-Button.svg";
 import Button from "../components/button/button";
+import Accordion from "assets/Accordon.svg";
 import TextIconButton from "../components/text-icon-button/text-icon-button";
 import CheckBoxPreview from "components/checkbox/checkbox-preview";
+import AccordionComponent from "components/accordion/accordion";
 
 export const WidgetsMetaData = [
     {
@@ -42,6 +44,19 @@ export const WidgetsMetaData = [
       description: "let users choose from multiple actions or options.",
       preview: (
         <CheckBoxPreview />
+      ),
+    },
+    {
+      id: "ACC-001",
+      label:"Accordion",
+      icon: Accordion,
+      description: "Use accordions to toggle content visibility in sections.",
+      preview: (
+        <div className="preview-container">
+          <div className="row-preview">
+            <AccordionComponent trailingIcon="ChevronDownIcon" />
+          </div>
+        </div>
       ),
     },
   ];
