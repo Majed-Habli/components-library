@@ -44,7 +44,7 @@ const Accordion = ({index, trailingIcon, leadingIcon}) => {
           opacity: activeLeftIndex === index ? "1" : "0",
         }}
       >
-        <div>Accordian text</div>
+        <div className="accordion-description">Accordian text</div>
       </div>
     </div>
   )
