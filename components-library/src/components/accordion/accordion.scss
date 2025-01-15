@@ -1,75 +1,69 @@
-.faq-container {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 20px;
-}
+.accordion-container {
+  .panel {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 8px 18px;
+    transition: height 0.4s ease, opacity 0.4s ease;
+  }
 
-.faq-column {
-  flex: 1;
-}
+  .accordion {
+    background-color: rgb(235, 232, 232);
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 18px;
+    min-width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    border-bottom: 1px solid #878787;
 
-.panel {
-  height: 0;
-  opacity: 0;
-  overflow: hidden;padding: 0 18px;
-  transition: height 0.4s ease, opacity 0.4s ease;
-}
+    &:hover {
+      background-color: #8db7c5;
+    }
 
-.faq-item .accordion.active + .panel {
-  opacity: 1;
-}
+    &.active {
+      background-color: #6da6b8;
 
-.accordion {
-  background-color: rgb(235, 232, 232);
-  text-transform: uppercase;
-  cursor: pointer;
-  padding: 18px;
-  min-width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  font-size: 15px;
-  transition: background-color 0.3s ease;
-  position: relative;
-  border-bottom: 1px solid #878787;
-}
+      .chevron-arrow-icon svg {
+        transform: rotate(180deg);
+      }
+    }
 
-.accordion.active {
-  background-color: #6da6b8;
-}
+    [class^="icon-"] {
+      border: 2px solid #000202;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      width: 20px;
+      justify-content: center;
+      padding: 2px;
+    }
 
-.accordion:hover {
-  background-color: #8db7c5;
-}
+    .chevron-arrow-icon {
+      position: absolute;
+      top: 23px;
+      right: 12px;
+      color: black;
+      width: 20px;
+      transition: transform 0.4s ease;
 
-[class^="icon-"] {
-  border: 2px solid #000202;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  width: 20px;
-  justify-content: center;
-  padding: 2px;
-}
+    }
 
-.chevron-arrow-icon {
-  position: absolute;
-  top: 20px;
-  right: 12px;
-  color: black;
-  width: 20px;
-  transition: transform 0.4s ease;
-}
+    &:not(:has([class^="icon-"])) .chevron-arrow-icon {
+      top: 17px;
+    }
 
-.accordion.active .chevron-arrow-icon svg {
-  transform: rotate(180deg);
-}
-
-.button-text {
-  max-width: 460px;
-  min-width: 200px;
-  color: #383737 !important;
+    .button-text {
+      max-width: 460px;
+      min-width: 200px;
+      color: #383737 !important;
+    }
+  }
 }
