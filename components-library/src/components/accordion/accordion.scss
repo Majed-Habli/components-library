@@ -1,14 +1,24 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+
 .accordion-container {
+  $grey-200: map-get(map-get($color-palette, grey), 200);
+  $grey-400: map-get(map-get($color-palette, grey), 400);
+  $grey-700: map-get(map-get($color-palette, grey), 700);
+  $grey-800: map-get(map-get($color-palette, grey), 800);
+  $blue-400: map-get(map-get($color-palette, blue), 400);
+
   .panel {
     height: 0;
     opacity: 0;
     overflow: hidden;
     padding: 8px 18px;
+    background-color: white ;
     transition: height 0.4s ease, opacity 0.4s ease;
   }
 
   .accordion {
-    background-color: rgb(235, 232, 232);
+    background-color: lighten($grey-200, 13%);
     text-transform: uppercase;
     cursor: pointer;
     padding: 18px;
@@ -22,22 +32,21 @@
     font-size: 15px;
     transition: background-color 0.3s ease;
     position: relative;
-    border-bottom: 1px solid #878787;
+    border-bottom: 1px solid $grey-400;
 
     &:hover {
-      background-color: #8db7c5;
+      background-color: lighten($blue-400,35%);
     }
 
     &.active {
-      background-color: #6da6b8;
-
+      background-color: lighten($blue-400,85%);
       .chevron-arrow-icon svg {
         transform: rotate(180deg);
       }
     }
 
     [class^="icon-"] {
-      border: 2px solid #000202;
+      border: 2px solid $grey-800;
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -50,7 +59,7 @@
       position: absolute;
       top: 23px;
       right: 12px;
-      color: black;
+      color: $grey-800;
       width: 20px;
       transition: transform 0.4s ease;
 
@@ -63,7 +72,28 @@
     .button-text {
       max-width: 460px;
       min-width: 200px;
-      color: #383737 !important;
+      color: $grey-700;
+    }
+
+    .accordion-description {
+      color: $grey-700;
+    }
+  }
+}
+
+@each $color-name, $shades in $color-palette {
+  @each $shade-name, $shade-value in $shades {
+    .accordion-container {
+      .accordion {
+        &.acc--#{$color-name}-#{$shade-name}{
+          &:hover {
+            background-color: lighten($shade-value,35%);
+          }
+        }
+        &.active {
+          background-color: lighten($shade-value,85%);
+        }
+      }
     }
   }
 }
