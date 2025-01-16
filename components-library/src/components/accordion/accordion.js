@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import "./accordion.scss";
 import * as Icons from '@heroicons/react/24/solid';
 
-const Accordion = ({index, trailingIcon, leadingIcon}) => {
+const Accordion = ({index, trailingIcon, leadingIcon, theme}) => {
   const [activeLeftIndex, setActiveLeftIndex] = useState(null);
 
   const panelRefs = useRef([]);
@@ -16,7 +16,7 @@ const Accordion = ({index, trailingIcon, leadingIcon}) => {
   return (
     <div key={index} className="accordion-container">
       <button
-        className={`accordion ${activeLeftIndex === index ? "active" : ""}`}
+        className={`accordion ${activeLeftIndex === index ? "active" : ""} acc--${theme}`}
         onClick={() => toggleAccordion(index)}
         aria-expanded={activeLeftIndex === index}
         aria-controls={`panel-${index}`}
