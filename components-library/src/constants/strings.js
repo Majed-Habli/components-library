@@ -54,7 +54,7 @@ export const WidgetsMetaData = [
       preview: (
         <div className="preview-container">
           <div className="row-preview">
-            <AccordionComponent trailingIcon="ChevronDownIcon" />
+            <AccordionComponent trailingIcon="ChevronDownIcon" title="Statment" content="Neque porro quisquam est qui dolorem ipsum quia"/>
           </div>
         </div>
       ),
