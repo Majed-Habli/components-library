@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import "./accordion.scss";
 import * as Icons from '@heroicons/react/24/solid';
 
-const Accordion = ({index, trailingIcon, leadingIcon, theme}) => {
+const Accordion = ({index, trailingIcon, leadingIcon, theme, title, content}) => {
   const [activeLeftIndex, setActiveLeftIndex] = useState(null);
 
   const panelRefs = useRef([]);
@@ -27,7 +27,7 @@ const Accordion = ({index, trailingIcon, leadingIcon, theme}) => {
           </span>
         )}
 
-        <span className="button-text">Statement</span>
+        <span className="button-text">{title}</span>
 
         {trailingIcon && TrailingIconComponent && (
           <span className="chevron-arrow-icon" >
@@ -44,7 +44,7 @@ const Accordion = ({index, trailingIcon, leadingIcon, theme}) => {
           opacity: activeLeftIndex === index ? "1" : "0",
         }}
       >
-        <div className="accordion-description">Accordian text</div>
+        <div className="accordion-description">{content}</div>
       </div>
     </div>
   )
