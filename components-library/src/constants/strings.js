@@ -81,6 +81,22 @@ export const WidgetsMetaData = [
       ],
     },
     {
+      id: "ACC-001",
+      title: "Accordion Component",
+      titleDescription: "Accordions are powerful tools for organizing and presenting content in a compact, interactive manner. They allow users to reveal or hide information as needed, making it easier to navigate complex or dense content. Whether for FAQs, menus, or feature showcases, accordions enhance user experience by keeping interfaces clean and intuitive while providing seamless access to additional details.",
+      sections: [
+        {
+          title: "Accordion Modes Overview",
+          descriptionBefore: "Our accordion components provide flexible options for organizing content. Here’s an overview of the modes available:",
+          listItems: [
+            "Connected: Stacked seamlessly with no gaps, ideal for linked content.",
+            "Detached: Spaced apart with distinct borders, perfect for standalone sections."
+          ],
+          descriptionAfter: "Explore the examples below to see each mode in action.",
+        },
+      ],
+    },
+    {
       id: "TIB-001",
       content: "This is the documentation for the text icon button component...",
     },
