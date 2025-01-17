@@ -16,7 +16,7 @@ const Accordion = ({index, trailingIcon, leadingIcon, theme, title, content}) =>
   return (
     <div key={index} className="accordion-container">
       <button
-        className={`accordion ${activeLeftIndex === index ? "active" : ""} acc--${theme}`}
+        className={`accordion ${activeLeftIndex === index ? "active" : ""} ${theme ? `acc--${theme}` : ""}`}
         onClick={() => toggleAccordion(index)}
         aria-expanded={activeLeftIndex === index}
         aria-controls={`panel-${index}`}
